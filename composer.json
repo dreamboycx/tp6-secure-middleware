@@ -1,0 +1,27 @@
+{
+    "name": "dreamboycx/tp6-secure-middleware",
+    "description": "ThinkPHP6 安全中间件合集(SQL注入检测、CORS跨域、IP黑名单、接口签名)",
+    "type": "library",
+    "authors": [
+        {
+            "name": "chenxiang",
+            "email": "dreamboycx@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "topthink/framework": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TpSecure\\": "src/"
+        }
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "TpSecure\\service\\TpSecureService"
+            ]
+        }
+    }
+}
