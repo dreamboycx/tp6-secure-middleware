@@ -4,7 +4,7 @@ namespace TpSecure\SqlInject;
 use think\facade\Log;
 use think\Request;
 use think\Response;
-class sqlInject{
+class SqlInject{
 
     /**
      * SQL注入关键字黑名单
