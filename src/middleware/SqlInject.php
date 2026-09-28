@@ -1,5 +1,5 @@
 <?php
-namespace TpSecure\SqlInject;
+namespace TpSecure\middleware;
 
 use think\facade\Log;
 use think\Request;
