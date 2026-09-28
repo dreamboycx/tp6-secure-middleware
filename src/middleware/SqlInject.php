@@ -220,22 +220,14 @@ class SqlInject{
     {
 
         if ($request->isAjax()) {
-            // AJAX请求返回JSON
-            header('Content-Type: application/json; charset=utf-8');
-            echo json_encode([
-                'code' => $code,
-                'msg' => $message,
-                'data' => null
-            ]);
-        } else {
-            // 普通请求返回HTML
-            header('HTTP/1.1 403 Forbidden');
-            echo '<html><head><meta charset="utf-8"><title>403 Forbidden</title></head><body>';
-            echo '<h1>403 Forbidden</h1>';
-            echo '<p>' . htmlspecialchars($message) . '</p>';
-            echo '</body></html>';
+            return json(['code' => $code, 'msg' => $message, 'data' => null], $code);
         }
-        exit;
+        // 普通请求返回HTML
+        $html = '<html><head><meta charset="utf-8"><title>403 Forbidden</title></head><body>';
+        $html .= '<h1>403 Forbidden</h1>';
+        $html .= '<p>' . htmlspecialchars($message) . '</p>';
+        $html .= '</body></html>';
+        return response($html, $code);
     }
 
 }
