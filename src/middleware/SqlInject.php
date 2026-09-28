@@ -200,7 +200,7 @@ class SqlInject{
     {
         $logData = [
             'time' => date('Y-m-d H:i:s'),
-            'ip' => lc_get_ip(),
+            'ip' => request()->ip(),
             'route' => $route,
             'param_key' => $key,
             'param_value' => $value,
