@@ -61,11 +61,7 @@ class SqlInject{
             return $next($request);
         }
         // 获取所有请求参数
-        $allParams = array_merge(
-            $request->get(),
-            $request->post(),
-            $request->param()
-        );
+        $allParams = $request->param();
 
         // 检测参数中是否存在SQL注入
         foreach ($allParams as $key => $value) {
