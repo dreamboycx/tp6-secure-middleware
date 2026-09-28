@@ -21,7 +21,10 @@
         "think": {
             "services": [
                 "TpSecure\\service\\TpSecureService"
-            ]
+            ],
+            "config": {
+                "tpsecure": "config/tpsecure.php"
+            }
         }
     }
 }
