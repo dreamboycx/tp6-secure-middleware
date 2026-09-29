@@ -21,7 +21,12 @@ class IpLimit
         $this->blackIp = array_merge($this->blackIp, $config['black_ip']);
         $clientIp = $request->ip();
         if (in_array($clientIp, $this->blackIp)) {
-            return response('访问被拒绝，IP受限', 403);
+            $message = '访问被拒绝，IP受限';
+            if ($request->isAjax()) {
+                return json(['code' => 403, 'msg' => $message, 'data' => null], 403);
+            }else{
+                return response($message, 403);
+            }
         }
 
         return $next($request);
