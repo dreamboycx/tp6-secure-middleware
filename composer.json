@@ -2,6 +2,7 @@
     "name": "dreamboycx/tp6-secure-middleware",
     "description": "ThinkPHP6 安全中间件合集(SQL注入检测、CORS跨域、IP黑名单、接口签名)",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "chenxiang",
